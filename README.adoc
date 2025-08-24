@@ -22,6 +22,18 @@ output::: unmastered track (single track)
 input::: unmastered track (single track)
 output::: mastered track (single track)
 
+=== Stages of Production
+
+==== __Production__
+```
+[DAW Save] --> [Bounce]
+```
+
+==== __Post-Production__
+```
+[DAW Save] --> [Stems] --> [Unmastered] --> [Masters]
+```
+
 == Vocabulary & Tokens
 
 TRACK:: constant, all-caps, words separated by `_` only: `[A-Z0-9_]+`
