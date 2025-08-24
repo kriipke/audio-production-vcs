@@ -7,6 +7,21 @@
 
 A clean, producer-friendly “audio VCS” from *writing → post → mastering*. It keeps the exact naming logic, makes edge-cases explicit, and adds just enough structure (folders, manifests, symlinks) so collaborators and future-you can glance and know what’s what.
 
+
+== Overview
+
+This Specification defines a versioning system for music production projects akin to https://semver.org[semantic versioning] for source code repositories. The specification acknowledges the following steps common to many music production workflows:
+
+1 DAW:: This work is creative work being done craft a track and often involves a mix of midi a sample-based workflows to arrange and produce the tracks that comprise a finished song. Work done in DAWs is typically saved as DAW project files for exmpaple `als` for Ableton, however others such as Logic and FL Studio use their proprietary extensions.
+input::: `als` project file
+output::: audio stems (multiple)
+2 Post-Processing:: For the sake of this specification it is assumed that post-processing is performed on __audio stems__. Often this work is done iteratively such that multiple "versions" of the stems will be bounced down each modify the tracks that comprise the song a bit more each time. Once the tracks have been crafted to everyones liking and the ratios between all the elements are appropriate the stems are all bounced down into a singe track containing the primary bus used to mix the track to produce the __unmastered track__.
+input::: audio stems (multiple)
+output::: unmastered track (single track)
+3 Mastering:: Once the unmastered track is ready for processing on the master track it begins the mastering phase of the process and the single unmastered track is processed as one does during the mastering process. Once the mastered track is ready is returned to the artist for revisions should there be any. Any subsequent tweaks produce a new "version" of the master. The version that is agreed upon to be published is usually referred to as the "final master".
+input::: unmastered track (single track)
+output::: mastered track (single track)
+
 == Vocabulary & Tokens
 
 TRACK:: constant, all-caps, words separated by `_` only: `[A-Z0-9_]+`
@@ -50,13 +65,28 @@ Master candidates (in-house):
 <TRACK>-<T1>-<T2>-FINAL.wav         ; duplicate of the chosen IDX
 ----
 
-=== Regex (for validators/automation)
+== Examples
 
-* Write ALS: `^([A-Z0-9_]+)-([0-1][0-9][0-5][0-9][AP])\.als$`
-* Write WAV/MP3: `^([A-Z0-9_]+)-([0-1][0-9][0-5][0-9][AP])\.(wav|mp3)$`
-* Stem WAV: `^([A-Z0-9_]+)-([0-1][0-9][0-5][0-9][AP])-([0-1][0-9][0-5][0-9][AP])-([A-Z0-9_]+)\.wav$`
-* Unmastered: `^([A-Z0-9_]+)-([0-1][0-9][0-5][0-9][AP])-([0-1][0-9][0-5][0-9][AP])-\[unmastered\]\.wav$`
-* Master: `^([A-Z0-9_]+)-([0-1][0-9][0-5][0-9][AP])-([0-1][0-9][0-5][0-9][AP])-(FINAL|[1-9][0-9]*)\.wav$`
+[source,text]
+----
+ABLETON save + bounces:
+TRACK_TITLE-1200A.als
+TRACK_TITLE-1200A.wav
+TRACK_TITLE-1200A.mp3
+
+Post stems from that save at 12:30 AM:
+TRACK_TITLE-1200A-1230A-BASS.wav
+TRACK_TITLE-1200A-1230A-DRUMS.wav
+TRACK_TITLE-1200A-1230A-VOCALS.wav
+
+Unmastered from that post:
+TRACK_TITLE-1200A-1230A-[unmastered].wav
+
+Mastering passes:
+TRACK_TITLE-1200A-1230A-1.wav
+TRACK_TITLE-1200A-1230A-2.wav
+TRACK_TITLE-1200A-1230A-FINAL.wav    (if #2 chosen)
+----
 
 == Canonical Folder Layout
 
@@ -115,28 +145,13 @@ Rationale: folders are chronological but also *semantic*. You can zip `masters/`
 `masters/<TRACK>-<T1>-<T2>-1.wav`, then `…-2.wav`, etc.
 .. When one is chosen, duplicate to `…-FINAL.wav` and update `symlinks/FINAL`.
 
-== Examples
+== Regex (for validators/automation)
 
-[source,text]
-----
-ABLETON save + bounces:
-TRACK_TITLE-1200A.als
-TRACK_TITLE-1200A.wav
-TRACK_TITLE-1200A.mp3
-
-Post stems from that save at 12:30 AM:
-TRACK_TITLE-1200A-1230A-BASS.wav
-TRACK_TITLE-1200A-1230A-DRUMS.wav
-TRACK_TITLE-1200A-1230A-VOCALS.wav
-
-Unmastered from that post:
-TRACK_TITLE-1200A-1230A-[unmastered].wav
-
-Mastering passes:
-TRACK_TITLE-1200A-1230A-1.wav
-TRACK_TITLE-1200A-1230A-2.wav
-TRACK_TITLE-1200A-1230A-FINAL.wav    (if #2 chosen)
-----
+* Write ALS: `^([A-Z0-9_]+)-([0-1][0-9][0-5][0-9][AP])\.als$`
+* Write WAV/MP3: `^([A-Z0-9_]+)-([0-1][0-9][0-5][0-9][AP])\.(wav|mp3)$`
+* Stem WAV: `^([A-Z0-9_]+)-([0-1][0-9][0-5][0-9][AP])-([0-1][0-9][0-5][0-9][AP])-([A-Z0-9_]+)\.wav$`
+* Unmastered: `^([A-Z0-9_]+)-([0-1][0-9][0-5][0-9][AP])-([0-1][0-9][0-5][0-9][AP])-\[unmastered\]\.wav$`
+* Master: `^([A-Z0-9_]+)-([0-1][0-9][0-5][0-9][AP])-([0-1][0-9][0-5][0-9][AP])-(FINAL|[1-9][0-9]*)\.wav$`
 
 == Manifests (Lightweight Metadata)
 
