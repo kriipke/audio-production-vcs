@@ -1,0 +1,66 @@
+# Mixdown Report
+
+**Track:**  
+**Version:**  
+**Date:**  
+**Engineer:**  
+
+---
+
+## General Notes
+- Overall impression:  
+- Strengths:  
+
+---
+
+## Frequency Balance
+- **Sub/Bass (20–80Hz):**  
+- **Kick vs Bass:**  
+- **Low-Mids (150–300Hz):**  
+- **High-Mids (2–5kHz):**  
+- **Highs (8–16kHz):**  
+
+---
+
+## Dynamics & Loudness
+- Integrated Loudness (LUFS):  
+- Peak Level:  
+- Dynamic Range (DR):  
+- Compression/limiting notes:  
+
+---
+
+## Stereo Image & Spatial
+- Mono compatibility:  
+- Panning observations:  
+- Reverb/delay notes:  
+
+---
+
+## Timing / Groove
+- Hi-hat alignment:  
+- Percussion groove:  
+- Swing/quantization:  
+
+---
+
+## Element Notes
+- **Kick:**  
+- **Bass:**  
+- **Hi-Hats & Percussion:**  
+- **Clap/Snare:**  
+- **Synths:**  
+- **FX:**  
+- **Vocals (if present):**  
+
+---
+
+## Recommendations
+1.  
+2.  
+3.  
+4.  
+
+**Reference Tracks:**  
+-  
+-  
