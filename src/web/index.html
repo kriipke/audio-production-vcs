@@ -9,9 +9,7 @@
 <body>
   <header>
     <h1>AVCS Track Browser</h1>
-    <div class="actions">
-      <button id="refresh" class="btn">Reindex</button>
-    </div>
+    <button id="refresh" class="btn">Reindex</button>
   </header>
 
   <main class="layout">
@@ -24,9 +22,23 @@
     </aside>
 
     <section id="versionPane" class="pane">
-      <div class="empty-state">
-        <h3>No track selected</h3>
-        <p>Choose a track from the left to browse versions and play stems.</p>
+      <div class="pane-head">
+        <div class="title">Select a track</div>
+      </div>
+
+      <!-- NEW: sticky version tabs wrapper -->
+      <div id="versionTabsWrap">
+        <div id="versionTabs" class="tabs"></div>
+      </div>
+
+      <div class="version-grid">
+        <div id="versionMain" class="version-main"></div>
+        <aside class="version-aside">
+          <h3>Stem Info</h3>
+          <div id="stemMeta" class="meta">
+            <p class="muted">Select a stem to see details.</p>
+          </div>
+        </aside>
       </div>
     </section>
   </main>
