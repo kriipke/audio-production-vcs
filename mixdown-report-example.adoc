@@ -1,0 +1,53 @@
+= Mixdown Report
+:icons: font
+:sectnums:
+
+Track:: Midnight Circuit
+Version:: v1.0
+Date:: Aug 25, 2025
+Engineer:: Example Mastering Studio
+
+== General Notes
+* Strong arrangement and solid groove foundation.
+* Club energy is present but hi-hats feel rushed.
+* Bass competes with kick in the low end.
+
+== Frequency Balance
+Sub/Bass (20–80Hz):: Sub present but slightly uncontrolled around 60Hz; suggest -2dB cut @ 60Hz with Q=2.
+Kick vs Bass:: Kick transient masked; apply 4–6dB sidechain compression on bass (fast attack, medium release).
+Low-Mids (150–300Hz):: Noticeable buildup at 220Hz; cut -2dB on mix bus.
+High-Mids (2–5kHz):: Percussion sharp at 4kHz; apply dynamic EQ dip.
+Highs (8–16kHz):: Hats bright but brittle; shelf down -1.5dB @ 12kHz.
+
+== Dynamics & Loudness
+* Integrated Loudness (LUFS):: -9.8 LUFS (slightly hot for premaster).
+* Peak Level:: -0.1dBFS (leave -3dB headroom).
+* Dynamic Range (DR):: DR 6 (acceptable but could breathe more with kick/bass clarity).
+
+== Stereo Image & Spatial
+* Good stereo spread on synths and FX.
+* Hi-hats overly wide; pull 15–20% more center for mono compatibility.
+* Reverb on clap overlaps with groove; shorten decay or apply ducking.
+
+== Timing / Groove
+* Hi-hats ahead by ~5–10ms; creates “rushed” perception.
+* Percussion groove otherwise solid.
+
+== Element Notes
+Kick:: Punchy but buried under bass; consider parallel compression for transient snap.
+Bass:: Wide subs; apply HPF at 30Hz and mono-sum below 100Hz.
+Hi-Hats & Percussion:: Bright but rushed; align and tame highs.
+Clap/Snare:: Good presence; transient shaping for more snap.
+Synths:: Balanced but muddy around 500Hz; cut gently.
+FX:: Reverb tails overlap; trim or EQ highs out of FX return.
+
+== Recommendations
+. Tighten hi-hat alignment to reduce rushed feel.
+. Apply sidechain compression on bass against kick.
+. Clean up low-mids with a dip around 220Hz.
+. Reduce highs slightly with a shelf around 12kHz.
+. Leave -3dB headroom and export 24-bit WAV for mastering.
+
+Reference Tracks:: 
+* Fisher – *Losing It*
+* Michael Bibi – *Whispers in the Wind*
