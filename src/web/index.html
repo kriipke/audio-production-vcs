@@ -9,21 +9,28 @@
 <body>
   <header>
     <h1>AVCS Track Browser</h1>
-    <button id="refresh">Reindex</button>
+    <div class="actions">
+      <button id="refresh" class="btn">Reindex</button>
+    </div>
   </header>
 
-  <main>
-    <aside>
-      <h2>Tracks</h2>
-      <ul id="trackList"></ul>
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <h2>Tracks</h2>
+        <input id="filter" class="input" type="search" placeholder="Filter…" />
+      </div>
+      <ul id="trackList" class="list"></ul>
     </aside>
 
-    <section id="detail">
-      <p class="muted">Select a track to view versions and play audio.</p>
+    <section id="versionPane" class="pane">
+      <div class="empty-state">
+        <h3>No track selected</h3>
+        <p>Choose a track from the left to browse versions and play stems.</p>
+      </div>
     </section>
   </main>
 
   <script src="/web/app.js"></script>
 </body>
 </html>
-
