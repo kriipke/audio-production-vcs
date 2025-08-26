@@ -1,0 +1,40 @@
+= A-VCS Viewer
+
+	.
+	├── go.mod
+	├── main.go
+	├── Dockerfile
+	└── web/
+	├── index.html
+	├── app.js
+	└── style.css
+
+
+== Required `Dropbox` Folder Structure
+
+=== Minimum
+
+Minimum required files for a `Track` to be recognized:
+
+	/Tracks
+	└── ENERGY
+	    ├── stems
+	    ├── ableton
+	    │   └── ENERGY-0430A.wav
+
+
+=== Expanded 
+
+Full structure with stems:
+
+	/Tracks
+	└── ENERGY
+	    ├── stems
+	    ├── ableton
+	    │   └── ENERGY-0430A.wav
+	    └── STEMS
+		└── 0720P-0430A
+		    ├── DRUMS-PERC_LOOP.wav
+		    ├── DRUMS-BUS-COMPRESSED-ETC.wav
+		    └── ...
+
